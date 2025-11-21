@@ -4,232 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Professional Portfolio</title>
-    <!-- Load Tailwind CSS from CDN -->
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons for aesthetic icons -->
+
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        /* Custom styles for the Inter font and smooth transitions */
-        :root {
-            --primary-color: #3b82f6; /* Tailwind blue-500 */
-        }
-        html {
-            font-family: 'Inter', sans-serif;
-        }
+        :root { --primary-color: #3b82f6; }
+        html { font-family: 'Inter', sans-serif; }
         .section-padding {
             padding: 80px 0;
-            min-height: 100vh; /* Ensures sections take up full viewport */
-            display: flex;
-            align-items: center;
         }
-        .nav-link:hover {
-            color: var(--primary-color);
-            transition: color 0.2s ease-in-out;
-        }
+        .nav-link:hover { color: var(--primary-color); }
     </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#3b82f6',
-                        'secondary': '#1f2937',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
 <body class="text-gray-800 bg-gray-50">
 
-    <!-- Fixed Navigation Header -->
+    <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <!-- Logo/Avatar Area -->
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
             <a href="#home" class="flex items-center space-x-2 text-xl font-bold text-secondary">
-                <!-- Placeholder Avatar/Logo -->
-                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-semibold">
+                <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
                     FH
                 </div>
                 <span>Fairoja Hoque</span>
             </a>
-            
-            <!-- Desktop Navigation Links -->
+
+            <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-6">
-                <a href="#home" class="nav-link text-gray-600 font-medium hover:text-primary">Home</a>
-                <a href="#about" class="nav-link text-gray-600 font-medium hover:text-primary">About</a>
-                <a href="#contact" class="nav-link text-gray-600 font-medium hover:text-primary">Contact</a>
+                <a href="#home" class="nav-link text-gray-600 font-medium">Home</a>
+                <a href="#about" class="nav-link text-gray-600 font-medium">About</a>
+                <a href="#contact" class="nav-link text-gray-600 font-medium">Contact</a>
             </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <a href="#home" class="block px-6 py-3 border-b">Home</a>
+            <a href="#about" class="block px-6 py-3 border-b">About</a>
+            <a href="#contact" class="block px-6 py-3 border-b">Contact</a>
+        </nav>
     </header>
 
     <main>
-        <!-- Home Section (Landing/Hero) -->
+        <!-- Home -->
         <section id="home" class="section-padding bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div class="lg:flex lg:items-center lg:justify-between">
-                    <!-- Text Content -->
-                    <div class="lg:w-1/2">
-                        <p class="text-lg text-primary font-semibold mb-3">Hi, I'm Fairoja Hoque </p>
-                        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900 mb-6">
-                            "Paving My Path,Project by Project."
-                        <p class="text-xl text-gray-600 mb-8 max-w-lg">
-                            A dedicated learner who is focused on developing new skills and tackling new challenges with enthusiasm and adaptability.
-                        </p>
-                        <a href="#about" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-md text-white bg-primary hover:bg-blue-600 transition duration-300">
-                            Learn More About Me
-                            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
-                        </a>
-                    </div>
-                    <!-- Image/Illustration Placeholder -->
-                    <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
-                        <!-- Placeholder Image: Simple abstract geometric design -->
-                        <img src="profiledp.png" 
-                             alt="Abstract illustration of a working professional" 
-                             class="rounded-xl object-cover h-96 w-96 hidden md:block"
-                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/9ca3af/ffffff?text=Portfolio';"
-                        >
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section (Education Focus) -->
-        <section id="about" class="section-padding bg-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <h2 class="text-4xl font-bold text-center text-secondary mb-12">My Journey & Education</h2>
-                <div class="max-w-4xl mx-auto space-y-12">
-
-                    <!-- Main Education Card -->
-                    <div class="bg-white p-8 md:p-10 rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition duration-300">
-                        <div class="flex items-start space-x-6">
-                            <i data-lucide="graduation-cap" class="w-8 h-8 text-primary mt-1"></i>
-                            <div>
-                                <h3 class="text-2xl font-semibold text-gray-900">Bachelor of Science in Computer Science</h3>
-                                <p class="text-xl text-gray-700 mt-1">University of Creative Technology, Chittagong</p>
-                                <p class="text-sm text-gray-500 mt-2">2022-2025</p>
-                                <ul class="list-disc list-inside text-gray-600 mt-4 space-y-2">
-                                    <li>Project: "Impact of social media contant on human life using ML/DL."</li>
-                                
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Secondary Education Card -->
-                    <div class="bg-white p-8 md:p-10 rounded-xl shadow-lg border-t-4 border-gray-400 hover:shadow-xl transition duration-300">
-                        <div class="flex items-start space-x-6">
-                            <i data-lucide="book-open" class="w-8 h-8 text-gray-500 mt-1"></i>
-                            <div>
-                                <h3 class="text-2xl font-semibold text-gray-900">Diploma in Computer Technolog</h3>
-                                <p class="text-xl text-gray-700 mt-1">Chittagong Mohila Polytechnic Institute</p>
-                                <p class="text-sm text-gray-500 mt-2">2016 — 2020</p>
-                                <ul class="list-disc list-inside text-gray-600 mt-4 space-y-2">
-                                    <li>Minor in Computer.</li>
-                                   
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section-padding bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <h2 class="text-4xl font-bold text-center text-secondary mb-12">Let's Connect</h2>
+            <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
                 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
-                    
-                    <!-- Contact Form (Example) -->
+                <!-- Text -->
+                <div>
+                    <p class="text-lg text-primary font-semibold mb-3">Hi, I'm Fairoja Hoque</p>
+
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        "Paving My Path, Project by Project."
+                    </h1>
+
+                    <p class="text-lg text-gray-600 mb-8">
+                        A dedicated learner focused on building new skills and solving challenges with passion.
+                    </p>
+
+                    <a href="#about" class="inline-flex items-center px-6 py-3 rounded-lg text-white bg-primary hover:bg-blue-600 shadow-lg transition">
+                        Learn More About Me
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Photo -->
+                <div class="flex justify-center">
+                    <img src="profiledp.png"
+                        class="rounded-xl object-cover h-80 w-80 md:h-96 md:w-96"
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/9ca3af/fff?text=Portfolio';">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section-padding bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4">
+
+                <h2 class="text-4xl font-bold text-center text-secondary mb-12">My Journey & Education</h2>
+
+                <div class="space-y-12 max-w-4xl mx-auto">
+
+                    <!-- BSc -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary">
+                        <div class="flex items-start space-x-6">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-primary"></i>
+
+                            <div>
+                                <h3 class="text-2xl font-semibold">Bachelor of Science in Computer Science</h3>
+                                <p class="text-xl text-gray-700">University of Creative Technology, Chittagong</p>
+                                <p class="text-sm text-gray-500 mt-1">2022 - 2025</p>
+
+                                <ul class="list-disc list-inside mt-4 text-gray-600">
+                                    <li>Project: "Impact of social media content on human life using ML/DL"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diploma -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-gray-400">
+                        <div class="flex items-start space-x-6">
+                            <i data-lucide="book-open" class="w-8 h-8 text-gray-500"></i>
+
+                            <div>
+                                <h3 class="text-2xl font-semibold">Diploma in Computer Technology</h3>
+                                <p class="text-xl text-gray-700">Chittagong Mohila Polytechnic Institute</p>
+                                <p class="text-sm text-gray-500 mt-1">2016 - 2020</p>
+
+                                <ul class="list-disc list-inside mt-4 text-gray-600">
+                                    <li>Minor in Computer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section-padding bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+
+                <h2 class="text-4xl font-bold text-center text-secondary mb-12">Let's Connect</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                    <!-- Form -->
                     <div class="lg:col-span-2 bg-gray-50 p-8 rounded-xl shadow-lg border">
-                        <h3 class="text-2xl font-semibold mb-6 text-gray-900">Send Me a Message</h3>
-                        <form action="#" method="POST" class="space-y-4">
+                        <h3 class="text-2xl font-semibold mb-6">Send Me a Message</h3>
+
+                        <form class="space-y-4">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                                <input type="text" name="name" id="name" required
-                                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3 border">
+                                <label class="text-sm">Full Name</label>
+                                <input type="text" class="mt-1 w-full p-3 rounded-lg border">
                             </div>
+
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                                <input type="email" name="email" id="email" required
-                                       class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3 border">
+                                <label class="text-sm">Email</label>
+                                <input type="email" class="mt-1 w-full p-3 rounded-lg border">
                             </div>
+
                             <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                                <textarea id="message" name="message" rows="4" required
-                                          class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary p-3 border"></textarea>
+                                <label class="text-sm">Message</label>
+                                <textarea class="mt-1 w-full p-3 rounded-lg border" rows="4"></textarea>
                             </div>
-                            <button type="submit" class="w-full inline-flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-primary hover:bg-blue-600 transition duration-300">
+
+                            <button class="w-full bg-primary text-white py-3 rounded-lg shadow hover:bg-blue-600">
                                 Send Inquiry
                             </button>
                         </form>
                     </div>
 
-                    <!-- Direct Contact & Social Links (Inspired by reference image) -->
+                    <!-- Contacts -->
                     <div class="space-y-8">
+
                         <div class="bg-white p-6 rounded-xl shadow-lg border">
-                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Direct Contact</h3>
-                            <div class="flex items-center space-x-3 text-gray-600 hover:text-primary transition duration-300">
+                            <h3 class="text-2xl font-semibold mb-4">Direct Contact</h3>
+                            <a href="mailto:fairojahoque2017@gmail.com" class="flex items-center space-x-3 text-gray-700 hover:text-primary">
                                 <i data-lucide="mail" class="w-5 h-5"></i>
-                                <a href="mailto:fairojahoque2017@gmail.com" class="text-lg">fairojahoque2017@gmail.com</a>
-                            </div>
+                                <span>fairojahoque2017@gmail.com</span>
+                            </a>
                         </div>
 
                         <div class="bg-white p-6 rounded-xl shadow-lg border">
-                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Follow Me</h3>
-                            <ul class="space-y-3 text-gray-600">
+                            <h3 class="text-2xl font-semibold mb-4">Follow Me</h3>
+                            <ul class="space-y-3">
                                 <li>
-                                    <a href="https://github.com/FairojaHoque" target="_blank" class="flex items-center space-x-3 hover:text-primary transition duration-300">
+                                    <a href="https://github.com/FairojaHoque"
+                                       class="flex items-center space-x-3 hover:text-primary">
                                         <i data-lucide="github" class="w-5 h-5"></i>
-                                        <span>Follow on GitHub</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.linkedin.com/in/fairoja-hoque-a76a76339" class="flex items-center space-x-3 hover:text-primary transition duration-300">
+                                    <a href="https://www.linkedin.com/in/fairoja-hoque-a76a76339"
+                                       class="flex items-center space-x-3 hover:text-primary">
                                         <i data-lucide="linkedin" class="w-5 h-5"></i>
-                                        <span>Follow on LinkedIn</span>
+                                        <span>LinkedIn</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/fairojahoque?" class="flex items-center space-x-3 hover:text-primary transition duration-300">
+                                    <a href="https://www.instagram.com/fairojahoque?"
+                                       class="flex items-center space-x-3 hover:text-primary">
                                         <i data-lucide="instagram" class="w-5 h-5"></i>
-                                        <span>Follow on Instagram</span>
+                                        <span>Instagram</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-6 md:p-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            
-            <!-- Footer Navigation -->
-            <div class="flex justify-center space-x-6 mb-4 text-sm">
-                <a href="#home" class="hover:text-primary transition duration-200">Home</a>
-                <a href="#about" class="hover:text-primary transition duration-200">About</a>
-                <a href="#contact" class="hover:text-primary transition duration-200">Contact</a>
+    <footer class="bg-gray-800 text-white p-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#home" class="hover:text-primary">Home</a>
+                <a href="#about" class="hover:text-primary">About</a>
+                <a href="#contact" class="hover:text-primary">Contact</a>
             </div>
-
-            <p class="text-gray-400 text-sm">
-                &copy; 2024 Fairoja Hoque. All Rights Reserved. Built with CSS.
-            </p>
+            <p class="text-gray-400 text-sm">&copy; 2024 Fairoja Hoque. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Script to render Lucide icons -->
     <script>
         lucide.createIcons();
+
+        // Mobile menu toggle
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
     </script>
 </body>
 </html>
